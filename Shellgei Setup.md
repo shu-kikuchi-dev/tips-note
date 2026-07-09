@@ -27,7 +27,7 @@ We will get those good characteristics through the combination of Doker and Git.
 
 
 
-Simply put, Docker is a platform to handle the virtual machine with high reproducibility, meaning you call each environment you made with Docker, Container. Those containers are completely separated from other containers and your local machine as all virtual machine platforms do. 
+Simply put, Docker is a platform to handle the virtual machine with high reproducibility, meaning you call each environment you made with Docker, Container. Those containers are completely separated from other containers and your local machine as all virtual machine platforms do.
 
 
 
@@ -40,6 +40,7 @@ But, one significance is existing, that is Image for docker. Image is a file tha
 ##### Step 0. Concept
 
 We will use Docker and Git to get the strength I enumerated above. Docker has a role to keep your local machine clean, give high reproducibility through Image with using virtual environment.
+
 
 
 And, Git put it in the Internet for usefulness. It is very convenient that you can download some configuration files and easily reproduce the completely same environment as you did before.
@@ -147,11 +148,12 @@ services:
 
 
 
-Adding some explanation about docker-compose.yml, it will decide what Image we use. In this sample .yml file, we use theoldmoon0602/shellgeibot. This Image is provided from the official(?). That setting is so professional as unreachable by our beginners' wisdom. There is no way to use the official one, especially for beginners.
+Adding some explanation about docker-compose.yml, it will decide what Image we use. In this sample .yml file, we use theoldmoon0602/shellgeibot. This Image is provided from the official(?). That setting is so professional as unreachable by our beginners' wisdom. There is no way not to use the official one, especially for beginners.
 
 
 
 And, We set the name of container, the directory we want to volume, the working directory and so on.
+
 
 
 Volume is a quite important concept of Docker. When we use numerous containers to manage numerous conditions, it is troublesome to install Editor one by one. Especially when you have your own personal settings you always do, the situation get more worse.
