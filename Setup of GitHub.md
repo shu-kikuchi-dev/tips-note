@@ -8,6 +8,7 @@ This document will explain the good way to make GitHub repository that contain s
 
 * installed git to your local pc(Windows)
 * installed MATLAB
+* use command prompt, not power shell
 
 
 
@@ -80,6 +81,10 @@ Any way, this concern is not appropriate for majority case, that using new local
 Discard previous .git:
 
 > rmdir /s /q .git
+
+
+
+Note that, above command is only available on command prompt, not power shell. Use power shell to run above command.
 
 
 
