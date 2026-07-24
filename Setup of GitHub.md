@@ -106,6 +106,10 @@ If you do not this, you will got the message from git that saying "nothing to co
 
 So, Make a file like "{your repository name}.txt" that explains what your repository is supposed to do, in your repository directory.
 
+Or, make an .gitignore before start your all works is also a good idea. It makes your repository/project completely clean and well planned.
+
+I will explain bit about .gitignore at "Section5. Other little things, .gitignore". So you can leap there and know little bit about .gitignore, and come back to this section and create .gitignore for your first commit.
+
 
 
 Add files to tracking:
@@ -357,4 +361,57 @@ This is a trap. Beginner might feel, Oh, So It is ok with this and think push wa
 
 
 Because you used single-quotation to commit and commit was not succeed and git says like everything u-to-date. This is quite obvious.
+
+
+
+### **Section 5: Other Little Things**
+
+
+
+##### 1: .gitignore
+
+.gitignore is a configuration file that specify what kind of file/folder is needed to share at GitHub and what isn't. Typically create this file to ignore some cache files, temporary files, heavy files. Ignoring some heavy files is important. If your repository contains some heavy files like thousand of pages of pdf or numerous 3 dimensional graphs, you need to wait much long time when you push in your daily works. It is waste of time.
+
+
+
+What the most important thing in GitHub is, reproductivity. Everybody see your remote repository is possible to reproduce almost same environment as you.  So, if some your files can be produced by your code contained in your same repository, they can be ignored basically. Because reproductivity is ensured if you share your code to create those.
+
+
+
+Lets move on to discussion of how to make .gitignore.
+
+
+Honesty, I do not know much about details of .gitignore. So, you better rely on recent high performance AI than me...
+
+But, I can tell you few points to make usable .gitignore through AI.]
+
+
+
+Firstly, you better not to use Chat GPT or Gemini (in your smartphones) or something like AI for daily chatting. You better use AI that adjusted for researching or developing. Google AI Studio is a good choice. The AI model they provide is named Gemini, but this Gemini is distinguished and bit different from other Geminis in your smartphones. This Gemini have massive space of memory, so he can almost every little thing you have talked to. And the crucial hallucination is apparently less than normal stupid Gemini.
+
+
+
+And, when you ask AI to create an .gitignore, you better try below thing:
+
+
+
+* Explain extremely in detail about your project 
+
+\-> What you are trying to achieve through the project, Priority for the things to do, Compromising points, and so on. This completely depends on your each project.
+
+
+
+* Explain extremely in detail about your repository that you are trying to make .gitignore for
+
+\-> What things are expected to be achieved through the repository, and that accomplishment mean what in your whole project. The priority and options you have or supposing, and so on. This also depends on your each project.
+
+
+
+* Say, "If you have any questions, confusion about order, explanations, please ask me anything. Or, if you found any kind of contradiction, you can point out those".
+
+
+
+* Let him explain extremely in detail about what he made
+
+\-> To know what he intended is very important. You can find some problems 
 
