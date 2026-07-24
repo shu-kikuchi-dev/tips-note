@@ -87,6 +87,16 @@ Initialize Directory:
 
 
 
+You have to make at least one file to make your first commit. So lets make any kind of files like .txt to explain about the repository. It can be completely anything. But you have to create at least one.
+
+If you do not this, you will got the message from git that saying "nothing to commit!!!". Since this message is written by white, not red, so beginner would not recognize this will be a problem and try push the empty folder, and get red error message in this time like "error: failed to push some...", finally you get upset. Haha.
+
+
+
+So, Make a file like "{your repository name}.txt" that explains what your repository is supposed to do, in your repository directory.
+
+
+
 Add files to tracking:
 
 > git add .
