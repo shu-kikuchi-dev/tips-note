@@ -61,6 +61,10 @@ At this step, We will make the local directory that works as a local repository 
 
 
 
+Make a new local directory that has the same name as the remote repository you made few minutes ago.
+
+
+
 Move to arbitrary directory:
 
 > cd {the directory that will work as a local repository}
@@ -68,6 +72,8 @@ Move to arbitrary directory:
 
 
 If you have used that directory with GitHub, there is possibility to existing some cache files. To keep that directory completely clean, you can execute below command.
+
+Any way, this concern is not appropriate for majority case, that using new local directory you made.
 
 
 
