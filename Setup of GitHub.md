@@ -370,15 +370,16 @@ Because you used single-quotation to commit and commit was not succeed and git s
 
 ##### 1: .gitignore
 
-.gitignore is a configuration file that specify what kind of file/folder is needed to share at GitHub and what isn't. Typically create this file to ignore some cache files, temporary files, heavy files. Ignoring some heavy files is important. If your repository contains some heavy files like thousand of pages of pdf or numerous 3 dimensional graphs, you need to wait much long time when you push in your daily works. It is waste of time.
+.gitignore is a configuration file that specify what kind of file/folder is not needed to share at GitHub. Typically create this file to ignore some cache files, temporary files, heavy files. Ignoring some heavy files is important. If your repository contains some heavy files like thousand of pages of pdf or numerous 3 dimensional graphs, you need to wait much long time when you push in your daily works. It is waste of time.
 
 
 
-What the most important thing in GitHub is, reproductivity. Everybody see your remote repository is possible to reproduce almost same environment as you.  So, if some your files can be produced by your code contained in your same repository, they can be ignored basically. Because reproductivity is ensured if you share your code to create those.
+What the most important thing in GitHub is, reproductivity. Everybody see your remote repository should be able to reproduce almost same environment as you.  So, if some your files can be produced by your code contained in your same repository, they can be ignored basically. Because reproductivity is ensured if you share your code to create those.
 
 
 
 Lets move on to discussion of how to make .gitignore.
+
 
 
 Honesty, I do not know much about details of .gitignore. So, you better rely on recent high performance AI than me...
@@ -387,7 +388,7 @@ But, I can tell you few points to make usable .gitignore through AI.]
 
 
 
-Firstly, you better not to use Chat GPT or Gemini (in your smartphones) or something like AI for daily chatting. You better use AI that adjusted for researching or developing. Google AI Studio is a good choice. The AI model they provide is named Gemini, but this Gemini is distinguished and bit different from other Geminis in your smartphones. This Gemini have massive space of memory, so he can almost every little thing you have talked to. And the crucial hallucination is apparently less than normal stupid Gemini.
+Firstly, you better not to use Chat GPT or Gemini (in your smartphones) or something like AI for daily chatting. You better use AI that be adjusted for researching or developing. Google AI Studio is a good choice. The AI model they provide is named Gemini, but this Gemini is distinguished and bit different from other Geminis in your smartphones. This Gemini have massive space of memory, so he can almost every little thing you have talked to. And the crucial hallucination is apparently less than normal stupid Gemini.
 
 
 
@@ -395,7 +396,7 @@ And, when you ask AI to create an .gitignore, you better try below thing:
 
 
 
-* Explain extremely in detail about your project 
+* Explain extremely in detail about your project
 
 \-> What you are trying to achieve through the project, Priority for the things to do, Compromising points, and so on. This completely depends on your each project.
 
@@ -409,9 +410,17 @@ And, when you ask AI to create an .gitignore, you better try below thing:
 
 * Say, "If you have any questions, confusion about order, explanations, please ask me anything. Or, if you found any kind of contradiction, you can point out those".
 
+\-> This makes your AI answer more reliable, robust.
+
 
 
 * Let him explain extremely in detail about what he made
 
-\-> To know what he intended is very important. You can find some problems 
+\-> To know what he intended is very important. You can find some misunderstandings and make it right.
+
+
+
+* Let him indicate sources he used, and tell him use reliable source as he can like official documents.
+
+\-> To ensure you can rely on that .gitignore or not.
 
