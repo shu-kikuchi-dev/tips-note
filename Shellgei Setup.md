@@ -5,6 +5,7 @@
 * installed Git
 * installed Docker
 * installed Docker desktop
+* using Windows in local machine
 
 
 
@@ -130,6 +131,8 @@ services:
 
 &#x20;   image: theoldmoon0602/shellgeibot:latest
 
+&#x20;   user: 1000:1000
+
 &#x20;   container\_name: shellgei-env\_26-07-09
 
 &#x20;   volumes:
@@ -149,6 +152,32 @@ services:
 
 
 Adding some explanation about docker-compose.yml, it will decide what Image we use. In this sample .yml file, we use theoldmoon0602/shellgeibot. This Image is provided from the official(?). That setting is so professional as unreachable by our beginners' wisdom. There is no way not to use the official one, especially for beginners.
+
+
+
+Then We do the setting about a user we will use. This setting is important, because, if we try to do everything without this setting, meaning using root user for every operations, it would be very dangerous and not recommended in usual practice of software developing, since a root user can break almost all kind of prohibitions like chmod command or something like that. So, there are so many accidents will happen with using a root user especially for beginners.
+
+
+
+That's why we usually be needed to set a user that is not a root. If you're host machine (your local machine) is using a OS of Linux or MacOS, you should set a user as your local machine. But, If you are using Windows as an OS of your machine, you can set something like careless, sloppy user id, like above example (1000:1000 is a very common setting for user id with Windows environment), since Windows is using completely different system for user id to Linux. So, there is no way to make mirrored user setting to our docker container.
+
+
+
+But, why would it be nice with mirrored user id between a local machine and a docker container? This is such a fundamental level quastion but, there is a very clear answer that can make your understanding easily. That is, if we use different user id between them, you got an error when you try to edit a file that is in volumed directory by your local machine's editor you usually use.
+
+
+
+If you are using Mac or Linux machine, you can get your local machine's user id by below command in prompt:
+
+> id -u
+
+> id -g
+
+And then you have to use those ids for setting but this document has intended for Windows so I will skip those. But let me state that you have two choices to set that ids. The one is type those two ids every time when you turn on the docker container (this is troublesome). The two is make .env file at a directory as your dockerfile exists and you do not have to type ids every time with this way.
+
+
+
+Note that, basically (or at least I do not know) you cannot apply more than one user id to one docker container.
 
 
 
