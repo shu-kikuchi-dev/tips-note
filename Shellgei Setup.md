@@ -36,6 +36,22 @@ But, one significance is existing, that is Image for docker. Image is a file tha
 
 
 
+Since most of images for docker container have designed to be light-weight, some famous common commands have been deleted in many cases. For example, sudo and man command do not exists in majority of professional docker images.
+
+
+
+But, just for man command, it would be enough with --help option in many cases. You can check options to a command like:
+
+
+
+> ls --help
+
+
+
+It will be enough with most of the cases, or just use your local machine to check commands. A deal with lack of sudo will be introduced later.
+
+
+
 ### Section 1. Setup
 
 ##### Step 0. Concept
