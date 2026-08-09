@@ -36,22 +36,6 @@ But, one significance is existing, that is Image for docker. Image is a file tha
 
 
 
-Since most of images for docker container have designed to be light-weight, some famous common commands have been deleted in many cases. For example, sudo and man command do not exists in majority of professional docker images.
-
-
-
-But, just for man command, it would be enough with --help option in many cases. You can check options to a command like:
-
-
-
-> ls --help
-
-
-
-It will be enough with most of the cases, or just use your local machine to check commands. A deal with lack of sudo will be introduced later.
-
-
-
 ### Section 1. Setup
 
 ##### Step 0. Concept
@@ -269,6 +253,10 @@ You will see a funny print.
 
 ### Section 2. In your daily works
 
+
+
+##### Term 1. Turn On/Off Your Container
+
 Just execute below commands in order after turn on the docker. You will enter to the docker container with normal user you set in docker-compose.yml
 
 
@@ -302,4 +290,58 @@ When you want to quit, execute below:
 > exit
 
 > docker-compose stop
+
+
+
+##### Term 2. Problems You Might Struggle With Because Of Docker Characteristics Through Shellgei Study
+
+Since most of images for docker container have designed to be light-weight, some famous common commands have been deleted in many cases. For example, sudo and man command do not exists in majority of professional docker images.
+
+
+
+But, just for man command, it would be enough with --help option in many cases. You can check options to a command like:
+
+
+
+> ls --help
+
+
+
+It will be enough with most of the cases, or just use your local machine to check commands. A deal with lack of sudo will be introduced later.
+
+
+
+You can check if commands are exists and be ready to be used or not with below command easily:
+
+
+
+> which {command name}
+
+(e.g. which grep, which ls, which sed, etc.)
+
+
+
+If you get a directory ends with that command name, it exists. But gave back none, it is not exists. You can install a command with using apt tool, but normal user do not have privilege to use apt tool, so you have to be a root user temporarily.
+
+
+
+Quit the container to change the user to a root.
+
+
+
+> exit
+
+> docker exec -u root shellgei bash
+
+> apt update		# Update information for packages
+
+> apt install {package name}
+
+(e.g. apt install man)
+
+
+
+But note that, packages that have been installed in this way, will disappear when you refine your docker-compose.yml and recreate new container as I stated before at the end of the Step2, Section1.
+
+
 
