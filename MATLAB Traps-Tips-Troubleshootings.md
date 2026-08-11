@@ -44,9 +44,9 @@ the certain execution time.
 
 
 
-> v = out.v\\\\\\\_data;
+> v = out.v\\\\\\\\\\\\\\\_data;
 
-> F = out.F\\\\\\\_data;
+> F = out.F\\\\\\\\\\\\\\\_data;
 
 > t = out.tout;
 
@@ -139,4 +139,48 @@ So, this will cause a problem. If you want to simulate automatically with MATLAB
 To dodge this, you should declare several variables that you want to change with scripts in base workspace.
 
 This will solve the problem and much easy.
+
+
+
+### **Section 5. Update tree structure of your already existing MATLAB project**
+
+Typically, it would be explained like MATLAB script files (.m) and Simulink model files (.slx, slxc) should existing to the root directory. It is correct and best practice for a small project or a beginner, but if you are treating such a big project, your project root directory get scattered immediately. Actually, we can place those files not a root. We can set it at arbitrary sub directories as we want with some settings.
+
+
+
+It is easy, just make new folders as you want (like models, src, outputs, etc.) and move files as you want (but .slx and .slxc must be the same directory). I show a example for a root directory (supposing GitHub sharing):
+
+
+
+&#x09;src -> source programs, ends with .m
+
+&#x09;figs -> figures you want to share through GitHub
+
+&#x09;csv\_files -> csv files you want to share through GitHub
+
+&#x09;models -> simulink models and its cache files. ends with .slx, .slxc
+
+&#x09;resorces -> project setting files automatically created by MATLAB (you must not let it be)
+
+&#x09;.gitattributes
+
+&#x09;.gitignore
+
+&#x09;{ProjectName}.prj
+
+&#x09;README.md
+
+
+
+Note that you have to set both .slx and .slxc at the same directory. And, the folder redorces is very important setting file automatically created by MATLAB, typically recommended to add this file to GitHub tracking without any touch.
+
+
+
+And then you have to add them to the project to correct recognition. Just open MATLAB and find your project's .prj file. Double click that file to open the project with project viewer.
+
+
+
+After you opened your project, right click the folders you made just few minutes ago and select "add this dolder to the project (with contents) (フォルダをプロジェクトに追加する（内容を含む）)". And then your new folders are recognized correctly.
+
+
 

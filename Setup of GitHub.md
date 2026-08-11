@@ -424,3 +424,49 @@ And, when you ask AI to create an .gitignore, you better try below thing:
 
 \-> To ensure you can rely on that .gitignore or not.
 
+
+
+##### 2: Unifying Several Repositories
+
+This takes very few steps and easy for a user that have build your own repository once before. To outline a situation, you just have to clear the git tracking history and make it belong of your new parent folder. And also you have to make one new .gitignore at your new root directory and remove old one. Let's dive into details.
+
+
+
+The way is very easy. Now I suppose you have two folders for two repositories on your local machine. Firstly you have to copy them and paste it to another directory just for safe.
+
+
+
+After that, make a new folder for your unified repository and name it to entriely explain about yoru project. And I suppose both of your repositories have a .gitignore. Since we set just a ends of the path for .gitignore typically, it is ok with just putting those two contents into one, even a place of unified .gitignore moves to upon new root directory. But still you need a bit adjusting for duplication of .gitignore contents or duplicated directory name. If you have duplicated directory name, you have to change a bit about it or add sequential directories to .gitignore to make it like a relative path not to mis-untracking.
+
+
+
+And then you can delete old .gitignores. and place new one to the new root directory. And note that, since this research is using MATLAB, there is a .gitattributes file for the old root for MATLAB repository. Just move that to the new directory, this is ok with the same reason for unifying of several .gitignore files (.gitignore does not specify absolute path).
+
+
+
+If your project need some adjusting for path reffering, do it. 
+
+
+
+The next step, is about .git tracking initializing. Execute below command at both old repsotories' root directory to wipe up all things about your old git tracking cache.
+
+
+
+> rmdir /s /q .git
+
+
+
+Then, move to the new root directory, execute below command:
+
+
+
+> git init
+
+
+
+After that, just follow setup for making new repository. But, let me enumerate what you have to do next:
+
+
+
+First, you have to make a new repsotory with browser, and make a initial commit to connect those remote repository and your local project.
+
