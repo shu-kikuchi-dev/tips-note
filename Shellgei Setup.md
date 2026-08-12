@@ -343,5 +343,3 @@ Quit the container to change the user to a root.
 
 But note that, packages that have been installed in this way, will disappear when you refine your docker-compose.yml and recreate new container as I stated before at the end of the Step2, Section1.
 
-
-

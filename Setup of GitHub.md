@@ -444,7 +444,7 @@ And then you can delete old .gitignores. and place new one to the new root direc
 
 
 
-If your project need some adjusting for path reffering, do it. 
+If your project need some adjusting for path reffering, do it.
 
 
 
@@ -469,4 +469,22 @@ After that, just follow setup for making new repository. But, let me enumerate w
 
 
 First, you have to make a new repsotory with browser, and make a initial commit to connect those remote repository and your local project.
+
+
+
+##### 3: Untrack already committed file/directory
+
+At first, move to your repository's root directory and execute below. If you want to untrack just for a file, choose upon one. If you want to untrack a directory, choose lower one:
+
+
+
+> git rm --cached {PATH TO A FILE}
+
+> git rm -r --cached {PATH TO A DIRECTORY}
+
+
+
+Note that the option --cached ensures your file or directory will stay there for local environment.
+
+
 
