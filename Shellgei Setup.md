@@ -343,3 +343,21 @@ Quit the container to change the user to a root.
 
 But note that, packages that have been installed in this way, will disappear when you refine your docker-compose.yml and recreate new container as I stated before at the end of the Step2, Section1.
 
+
+
+Conversely, If you have installed a wrong package and wanting to remove it, you can simply execute below command with root privileges:
+
+
+
+> apt-get purge -y {Package Name}
+
+
+
+But, some packages that are working at fundamental level, cannot be removed sometimes. For example, sudo is that. If you remove that kind of packages, you can throw away your current container and recreate new one. That is the most simplest way to solve this I think. You can delete your container with below command (your volumed data, docker-compose.yml, a image you used will be alive):
+
+
+
+> exit	# Firstly you have to quit the container
+
+> docker-compose down
+
