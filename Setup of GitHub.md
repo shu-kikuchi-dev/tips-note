@@ -184,7 +184,7 @@ Push:
 
 ##### Step 5: Clone and Update Your Local Repository
 
-This step is intended to execute on a different pc than the one used in the previous step.
+This step is intended to execute on a different pc than the one used in the previous step. Note that you have to execute below command at where you want to place the repository root folder, meaning, if you try to clone a repository named LuGre, and execute below command at C:/Users/Projects or something like that, you will get a repository LuGre placed at C:/Users/Projects/LuGre. So you do not have to create the same name as your repository at Web with your hand.
 
 
 
@@ -485,6 +485,4 @@ At first, move to your repository's root directory and execute below. If you wan
 
 
 Note that the option --cached ensures your file or directory will stay there for local environment.
-
-
 
