@@ -8,7 +8,7 @@ This document will explain the good way to make GitHub repository that contain s
 
 * installed git to your local pc(Windows)
 * installed MATLAB
-* use command prompt, not power shell
+* use command prompt, not power shell(Most of the commands also works with powershell, but some crucial commands wont work with it)
 
 
 
@@ -332,7 +332,7 @@ In this section, we will introduce some usual situations of troubles for beginne
 
 
 
-##### Case 1: trouble with single-quotation\[ ' ]
+##### Case 1: Trouble with single-quotation\[ ' ]
 
 When you type some commands to operate some git things, do not use single-quotation. Especially when you try to commit.
 
@@ -361,6 +361,106 @@ This is a trap. Beginner might feel, Oh, So It is ok with this and think push wa
 
 
 Because you used single-quotation to commit and commit was not succeed and git says like everything u-to-date. This is quite obvious.
+
+
+
+##### Case 2: Git merge conflict
+
+Git merge conflict is the one of the standard problems all users may see at least one time for their lives. This conflict would happen when you refine the file in your local repository and try to push that work, even you have not pulled your latest work, uploaded to GitHub remote repository from your another development environment.
+
+
+
+But, note that, if you ve done this kind of conflicts to some system files that automatically generated and updated by a soft ware, it is very difficult to solve it in this way. When you face that problem, all you have to do is take backup of whole your repository, and clone your latest remote repository as new local repository, and then add your changes that had not be committed last time, by your hand, like refine code or fix errors or edit some Simulink models, etc. and then you can push it.
+
+
+
+Here is the situation I ve faced for the example:
+
+
+
+D:\\brah-brah-dir\\research-note> git status
+
+GitHub said "there is the work to be committed on your local repository!"
+
+
+
+D:\\brah-brah-dir\\research-note> git fetch
+
+GitHub said "your repository's latest update has fetched!"
+
+
+
+D:\\brah-brah-dir\\research-note> git status
+
+GitHub said "use git pull to update your local branch!"
+
+GitHub said "there is the work to be committed on your local repository!"
+
+
+
+D:\\brah-brah-dir\\research-note> git pull origin main
+
+Git Hub said "That cant be done! What are you doing! Please commit your changes before you merge!"
+
+
+
+D:\\brah-brah-dir\\research-note> git add .
+
+D:\\brah-brah-dir\\research-note> git commit -m "brah brah message"
+
+Git Hub said "you ve changed 1 file, 9 insertion, 1 deletion,,,, and,,, hmmm"
+
+
+
+D:\\brah-brah-dir\\research-note> git push origin main
+
+Git Hub said "UNACCEPTABLE!! You have to fix the conlicts first!! Then, commit!"
+
+
+
+After that correspondings, you will see conflict markers in your conflicting file that looks like:
+
+
+
+<<<<<<< HEAD
+
+(Your local changes that you just committed)
+
+=======
+
+(The changes from GitHub / origin/main)
+
+>>>>>>> 7ebec8e...
+
+
+
+To Solve this, you have to edit the file so it contains the final version you want to keep (you can keep both, keep only local one, keep only remote one)
+
+Then, delete the conflict markers completely. Dlete <<<<<<< HEAD, Delete ======= and >>>>>>>7ebec8e..., and save the file.
+
+
+
+Go back to the prompt and run:
+
+
+
+D:\\brah-brah-dir\\research-note> git add .
+
+D:\\brah-brah-dir\\research-note> git commit -m "message indicates resolving merge conflict"
+
+
+
+Or, simply git commit without -m to accept the default merge message.
+
+Now you can push your changes cleanly:
+
+
+
+D:\\brah-brah-dir\\research-note> git push origin main
+
+
+
+I ve been explaining how to solve this common problem, but yes, since this is a common problem, there is a some ways of shortcutting. But, this way I ve explained is the most fundamental and robust, even it take a bit of effort of you.
 
 
 
